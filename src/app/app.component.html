@@ -1,0 +1,40 @@
+
+
+<ng-container *ngIf="!hasSelected">
+  <mat-card class="content">
+    <div class="card highlight-card card-small">
+      <span>{{ title }} is running!</span>
+    </div>
+    <mat-card class="card name">
+
+      <mat-form-field class="example-form-field">
+        <mat-label>Enter name</mat-label>
+        <input matInput type="text">
+      </mat-form-field>
+    </mat-card>
+    
+    <div class="button-row">
+      <button class="button" mat-raised-button>Basic</button>
+      <button mat-raised-button color="primary">Primary</button>
+    </div>
+
+      <div class="card-container">
+        <a class="card" target="_blank" rel="noopener" (click)="onHostClick()">
+          <i class="material-icons">groups</i>
+          <span> Host </span>   
+        </a>
+        
+        <a class="card" target="_blank" rel="noopener" href="https://angular.io/cli">
+          <span>Join</span>
+        </a>
+      </div>
+  </mat-card>
+</ng-container>
+
+<ng-container *ngIf="this.isHost">
+  <show-list></show-list> 
+</ng-container>
+
+<router-outlet>
+
+</router-outlet>
